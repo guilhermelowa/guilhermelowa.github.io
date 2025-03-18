@@ -8,6 +8,8 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
       - name: Checkout
@@ -28,4 +30,5 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: out
-          branch: gh-pages 
+          branch: gh-pages
+          token: ${{ secrets.GITHUB_TOKEN }} 
