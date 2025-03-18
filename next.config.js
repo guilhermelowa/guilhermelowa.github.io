@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  /* config options here */
-  distDir: process.env.NODE_ENV === "production" ? "build" : ".next",
+  output: 'export',
+  basePath: process.env.NODE_ENV === 'production' ? '/guilhermelowa.github.io' : '',
   images: {
     unoptimized: true,
     domains: [
@@ -35,4 +35,4 @@ const nextConfig = {
   },
 };
 
-export default nextConfig;
+module.exports = nextConfig;
